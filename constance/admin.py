@@ -121,6 +121,10 @@ class ConstanceAdmin(admin.ModelAdmin):
                 'form_field': form[name],
             })
         context['config'].sort(key=itemgetter('name'))
+        try:
+            context['fieldsets'] = self.fieldsets
+        except:
+            pass
         context_instance = RequestContext(request,
                                           current_app=self.admin_site.name)
         return render_to_response(settings.CHANGE_LIST_TEMPLATE,
