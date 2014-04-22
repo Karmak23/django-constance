@@ -123,7 +123,7 @@ class ConstanceAdmin(admin.ModelAdmin):
         context['config'].sort(key=itemgetter('name'))
         context_instance = RequestContext(request,
                                           current_app=self.admin_site.name)
-        return render_to_response('admin/constance/change_list.html',
+        return render_to_response(settings.CHANGE_LIST_TEMPLATE,
             context, context_instance=context_instance)
 
     def has_add_permission(self, *args, **kwargs):
