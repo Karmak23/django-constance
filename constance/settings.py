@@ -25,3 +25,6 @@ DATABASE_CACHE_BACKEND = getattr(settings, 'CONSTANCE_DATABASE_CACHE_BACKEND',
 DATABASE_PREFIX = getattr(settings, 'CONSTANCE_DATABASE_PREFIX', '')
 
 SUPERUSER_ONLY = getattr(settings, 'CONSTANCE_SUPERUSER_ONLY', True)
+
+CHANGE_LIST_TEMPLATE = getattr(settings, 'CONSTANCE_CHANGE_LIST_TEMPLATE', 
+                               'admin/constance/change_list.html')
